@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.model.Danhmuc;
 import com.example.model.SanPham;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     AutoCompleteTextView auto1;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<SanPham> sanPhamAdapter;
     Danhmuc selectedDanhmuc = null;
     ArrayAdapter<SanPham> autoSanPham;
+
 
 
     @Override
@@ -63,149 +66,33 @@ public class MainActivity extends AppCompatActivity {
                 SanPham sp = sanPhamAdapter.getItem(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Thong tin san pham");
-                if(sp.getTen().equals("Iphone4"))
+                SanPham sp1 = new SanPham("Iphone4","2000",100);
+                SanPham sp2 = new SanPham("Iphone5","2500",100);
+                SanPham sp3 = new SanPham("Iphone5s","3000",100);
+                SanPham sp4 = new SanPham("Iphone6","3500",100);
+                SanPham sp5 = new SanPham("Iphone6s","4000",100);
+                SanPham sp6 = new SanPham("Iphone7","4500",100);
+                SanPham sp7 = new SanPham("Iphone7s","5000",100);
+                SanPham sp8 = new SanPham("Iphone8","5500",100);
+                SanPham sp9 = new SanPham("Iphone8s","6000",100);
+                SanPham sp10 = new SanPham("SamSungJ7","3000",100);
+                SanPham sp11 = new SanPham("A30","2500",100);
+                SanPham sp12 = new SanPham("Dell G","5000",100);
+                SanPham sp13 = new SanPham("Asus VX5","5500",100);
+                SanPham sp14 = new SanPham("MacBook","5500",100);
+                SanPham sp15 = new SanPham("Apple Watch5","5500",100);
+                SanPham sp16 = new SanPham("SamSung Galaxy Watch","5500",100);
+                SanPham sp17 = new SanPham("Fitbit Versa2","5500",100);
+
+                SanPham []arrSp = {sp1,sp2,sp3,sp4,sp5,sp6,sp7,sp8,sp9,sp10,sp11,sp12,sp13,sp14,sp15,sp16,sp17};
+                for(int i=0;i<17;i++)
                 {
-                    builder.setMessage("San pham: "+auto1.getText().toString()+"\n Hang chinh hang"
-                    +"\n Gia: 700000 "+"\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone5"))
-                {
-                    builder.setMessage("San pham "+auto1.getText().toString()+"\n Hang chinh hang"
-                            +"Gia: 1200000 "+"\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone5s")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 1900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone6")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 3000000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone6s")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 5000000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone7")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 6900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone7s")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 7500000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone8")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 8300000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone8s")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 9000000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("IphoneX")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 1100000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("IphoneXs")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 1290000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone11")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 15000000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Iphone12")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 20000000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("SamSungJ7")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 6900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("SamSungA30")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 4900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("SamSungA50")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 5900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("SamSungM20")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 3800000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("BPhone")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 6900000 " + "\n So luong: 1000+");
+                    if(sp.getTen().equals(arrSp[i].getTen()))
+                    {
+                        builder.setMessage("Name: "+arrSp[i].getTen()+"\nPrice: "+arrSp[i].getPrice()+"\nAmount: "+arrSp[i].getAmount());
+                    }
                 }
 
-                else if(sp.getTen().equals("Dell Inspirion")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 19000000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Dell G")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 23000000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Dell XPS12")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 20900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Dell XPS13")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 21900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Dell XPS15")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 22900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Asus")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 15900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Asus U43SD")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 16900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Asus VX5")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 17900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Asus VX7")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 19900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("MacBook")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 30900000 " + "\n So luong: 1000+");
-                }else if(sp.getTen().equals("KoreTrack")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 5900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Apple Watch5")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 7900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("SamSung Galaxy Watch")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 8900000 " + "\n So luong: 1000+");
-                }
-                else if(sp.getTen().equals("Fitbit Versa2")) {
-                    builder.setMessage("San pham: " + auto1.getText().toString() + "\n Hang chinh hang"
-                            + "\n Gia: 4900000 " + "\n So luong: 1000+");
-                }
-
-                builder.setPositiveButton("Them vao gio hang ", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(MainActivity.this,"Them thanh cong ",Toast.LENGTH_SHORT).show();
-                    }
-                });
-                builder.setNegativeButton("Huy ", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
                 builder.create().show();
             }
         });
@@ -247,28 +134,13 @@ public class MainActivity extends AppCompatActivity {
         autoSanPham.add(new SanPham("Iphone7s"));
         autoSanPham.add(new SanPham("Iphone8"));
         autoSanPham.add(new SanPham("Iphone8s"));
-        autoSanPham.add(new SanPham("IphoneX"));
-        autoSanPham.add(new SanPham("IphoneXs"));
-        autoSanPham.add(new SanPham("Iphone11"));
-        autoSanPham.add(new SanPham("Iphone12"));
         autoSanPham.add(new SanPham("SamSungJ7"));
         autoSanPham.add(new SanPham("SamSungA30"));
-        autoSanPham.add(new SanPham("SamSungA50"));
-        autoSanPham.add(new SanPham("SamSungM20"));
-        autoSanPham.add(new SanPham("BPhone"));
 
-        autoSanPham.add(new SanPham("Dell Inspirion"));
         autoSanPham.add(new SanPham("Dell G"));
-        autoSanPham.add(new SanPham("Dell XPS12"));
-        autoSanPham.add(new SanPham("Dell XPS13"));
-        autoSanPham.add(new SanPham("Dell XPS15"));
-        autoSanPham.add(new SanPham("Asus"));
-        autoSanPham.add(new SanPham("Asus U43SD"));
         autoSanPham.add(new SanPham("Asus VX5"));
-        autoSanPham.add(new SanPham("Asus VX7"));
         autoSanPham.add(new SanPham("MacBook"));
 
-        autoSanPham.add(new SanPham("KoreTrak"));
         autoSanPham.add(new SanPham("Apple Watch5"));
         autoSanPham.add(new SanPham("SamSung Galaxy Watch"));
         autoSanPham.add(new SanPham("Fitbit Versa2"));
