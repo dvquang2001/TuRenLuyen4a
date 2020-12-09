@@ -3,9 +3,13 @@ package com.example.model;
 import java.io.Serializable;
 
 public class SanPham implements Serializable {
-    private int hinh;
+    private String nguongoc;
+    private String Dungtich;
+    private String xuatxu;
     private String ten;
+    private int hinh;
     private int gia;
+    
 
     public SanPham() {
     }
@@ -14,6 +18,38 @@ public class SanPham implements Serializable {
         this.hinh = hinh;
         this.ten = ten;
         this.gia = gia;
+    }
+
+    public SanPham(String nguongoc, String ten, String dungtich, String xuatxu) {
+        this.nguongoc = nguongoc;
+        this.ten = ten;
+        Dungtich = dungtich;
+        this.xuatxu = xuatxu;
+        
+    }
+
+    public String getNguongoc() {
+        return nguongoc;
+    }
+
+    public void setNguongoc(String nguongoc) {
+        this.nguongoc = nguongoc;
+    }
+
+    public String getDungtich() {
+        return Dungtich;
+    }
+
+    public void setDungtich(String dungtich) {
+        Dungtich = dungtich;
+    }
+
+    public String getXuatxu() {
+        return xuatxu;
+    }
+
+    public void setXuatxu(String xuatxu) {
+        this.xuatxu = xuatxu;
     }
 
     public int getHinh() {

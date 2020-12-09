@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.model.SanPham;
+
 public class IntentActivity extends AppCompatActivity {
-    TextView txtNguocGoc, txtXuatXu, txtHang, txtDungTich;
+    TextView txtThongtin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,20 +18,11 @@ public class IntentActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        txtDungTich = findViewById(R.id.txtDungTich);
-        txtHang = findViewById(R.id.txtHang);
-        txtNguocGoc = findViewById(R.id.txtNguonGoc);
-        txtXuatXu = findViewById(R.id.txtXuatXu);
+        txtThongtin = findViewById(R.id.txtThongtin);
 
         Intent intent = getIntent();
-        String a = intent.getStringExtra("a");
-        String b = intent.getStringExtra("b");
-        String c = intent.getStringExtra("c");
-        String d = intent.getStringExtra("d");
-
-        txtNguocGoc.setText("Nguoc goc: "+a);
-        txtHang.setText("Hang: "+b);
-        txtDungTich.setText("Dung tich: "+c);
-        txtXuatXu.setText("Xuat xu: "+d);
+        SanPham sanPham = (SanPham) intent.getSerializableExtra("SelectedSanPham");
+        txtThongtin.setText("Nguon goc: "+sanPham.getNguongoc()+"\nHang: "+sanPham.getTen()+
+                "\nDung tich: "+sanPham.getDungtich()+"\nXuat xu: "+sanPham.getXuatxu());
     }
 }

@@ -37,34 +37,18 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 SanPham sp = sanPhamAdapter.getItem(position);
                 Intent intent = new Intent(MainActivity.this,IntentActivity.class);
-                if(sp.getTen().equals("Cocacola"))
+                SanPham sp1 = new SanPham("Chinh hang","Cocacola","330ml","Viet Nam");
+                SanPham sp2 = new SanPham("Chinh hang","Pepsi","330ml","Viet Nam");
+                SanPham sp3 = new SanPham("Chinh hang","7Up","400ml","Viet Nam");
+                SanPham sp4 = new SanPham("Chinh hang","Milk","300ml","Viet Nam");
+                SanPham []arrSanpham ={sp1,sp2,sp3,sp4};
+                for(int i=0;i<4;i++)
                 {
-                    intent.putExtra("a","Chinh hang");
-                    intent.putExtra("b","Cocacola");
-                    intent.putExtra("c","330ml");
-                    intent.putExtra("d","Viet Nam");
+                    if(sp.getTen().equals(arrSanpham[i].getTen()))
+                    {
+                        intent.putExtra("SelectedSanPham",arrSanpham[i]);
+                    }
                 }
-                else if(sp.getTen().equals("Pepsi"))
-                {
-                    intent.putExtra("a","Chinh hang");
-                    intent.putExtra("b","Pepsi");
-                    intent.putExtra("c","330ml");
-                    intent.putExtra("d","Viet Nam");
-                } if(sp.getTen().equals("7Up"))
-                {
-                    intent.putExtra("a","Chinh hang");
-                    intent.putExtra("b","Seven Up");
-                    intent.putExtra("c","500ml");
-                    intent.putExtra("d","Duc");
-                }
-                if(sp.getTen().equals("Milk"))
-                {
-                    intent.putExtra("a","Chinh hang");
-                    intent.putExtra("b","Milk");
-                    intent.putExtra("c","450ml");
-                    intent.putExtra("d","Ha Lan");
-                }
-
                 startActivity(intent);
 
             }
